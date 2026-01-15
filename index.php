@@ -1,14 +1,16 @@
 <?php
-$user = [
-    ["name" => "John", "email" => "John@email.com", "password" => "123abc"],
-    ["name" => "Tim", "email" => "Tim@email.com", "password" => "123abc"],
-    ["name" => "Sly", "email" => "Sly@email.com", "password" => "123abc"]
-];
+$nums_array = [1, 2, 3, 4, 5];
+$sum_of_array = array_sum($nums_array);
+$count_of_array = count($nums_array);
 
-echo $user[2]["email"];
+$colors = ["Red", "Blue", "Green"];
+$reversed_colors = array_reverse($colors);
+$colors[] = "Purple";
+$colors[1] = "Pink";
+//array_pop($colors);
 ?>
 
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,8 +19,11 @@ echo $user[2]["email"];
 
 <body>
     <div id="1">
-        <?= "Hello, my name is $fullName" ?> 
-</div>
+        <pre>
+        <!-- <?= "The sum of the {$count_of_array} numbers is: {$sum_of_array}"  ?> -->
+         <?= print_r($colors) ?>
+        </pre>
+    </div>
 </body>
 
-</html> -->
+</html>
