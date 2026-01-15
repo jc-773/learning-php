@@ -1,3 +1,7 @@
+/*
+A very simple example of creating a multi-dimensional array and accessing a specific element
+*/
+
 <?php
 $user = [
     ["name" => "John", "email" => "John@email.com", "password" => "123abc"],
@@ -7,18 +11,3 @@ $user = [
 
 echo $user[2]["email"];
 ?>
-
-<!--<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Basic PHP demo</title>
-</head>
-
-<body>
-    <div id="1">
-        <?= "Hello, my name is $fullName" ?> 
-</div>
-</body>
-
-</html> -->
