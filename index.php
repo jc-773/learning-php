@@ -1,29 +1,31 @@
 <?php
-$nums_array = [1, 2, 3, 4, 5];
-$sum_of_array = array_sum($nums_array);
-$count_of_array = count($nums_array);
+require "database_connection.php";
 
-$colors = ["Red", "Blue", "Green"];
-$reversed_colors = array_reverse($colors);
-$colors[] = "Purple";
-$colors[1] = "Pink";
-//array_pop($colors);
+$stmt = $pdo->prepare("SELECT * from posts");
+
+$stmt->execute();
+
+$results = $stmt->fetchAll();
+
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>Basic PHP demo</title>
+    <title>Blog</title>
 </head>
 
 <body>
-    <div id="1">
-        <pre>
-        <!-- <?= "The sum of the {$count_of_array} numbers is: {$sum_of_array}"  ?> -->
-         <?= print_r($colors) ?>
-        </pre>
-    </div>
+    <header>
+        <h1>My blog example</h1>
+    </header>
+    <?php foreach ($results as $post) : ?>
+        <div>
+            <p>
+                <?= $post["title"] ?>
+            </p>
+        </div>
+    <?php endforeach ?>
 </body>
 
 </html>
